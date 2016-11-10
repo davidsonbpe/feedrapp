@@ -49,13 +49,8 @@ export default class Feed {
   _applyOptions (feed, options) {
     feed.entries = feed.entries.slice(0, options.num);
 
-    return feed;
-  }
-  
-  _applyOptions (feed, options) {
-    //feed.entries = feed.entries.slice(0, options.num);
     xmlString: 'Hello you';
-    return xmlString.feed;
+    return feed.xmlString;
   }
 
   _formatItem (author, item) {
