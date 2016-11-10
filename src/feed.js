@@ -31,10 +31,10 @@ export default class Feed {
         });
       });
     }).then((feed) => {
-      feed.push( { "xmlString":"whatever" };
+      feed.push( { "xmlString":"whatever" } );
       return this._format(feed);
     }).then((feed) => {
-      feed.push( { "xmlString":"whatever" };
+      feed.push( { "xmlString":"whatever" } );
       return this._applyOptions(feed, options);
     });
   }
