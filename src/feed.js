@@ -22,10 +22,7 @@ export default class Feed {
           if (err) {
             return reject(err);
           } else {
-           // var newObj = ['xmlString': 'Hello you'];
-            //feed = _.merge(feed, newObj);
-            //return resolve(feed.push( { xmlString, "xmlString":"whatever" } );
-            feed.push( { "xmlString":"whatever" } );
+            //feed.push( { "xmlString":"whatever" } );
             return resolve(feed);
           }
         });
@@ -41,6 +38,7 @@ export default class Feed {
     let author = data.author || '';
 
     return {
+      data: data,
       feedUrl: this.url,
       title: data.title,
       link: data.link,
