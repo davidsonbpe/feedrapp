@@ -62,10 +62,10 @@ export default class Feed {
 
     content = content.replace(/\u2028/g, '').replace(/\u2029/g, '');
     
-    let MediaEnclosure = this._extractThumbnail(item);
-    if (!MediaEnclosuere){
-      let MediaEnclosure = this._extractEnclosure(item);
-    }
+    //let MediaEnclosure = this._extractThumbnail(item);
+    //if (!MediaEnclosuere){
+    //  let MediaEnclosure = this._extractEnclosure(item);
+    //}
 
     return {
       title: item.title,
@@ -75,7 +75,7 @@ export default class Feed {
       publishedDate: item.published || item.pubDate || item.date,
       categories: item.categories || [],
       author: item.author || this._extractCreator(item) || author,
-      thumbnail: MediaEnclosure
+      thumbnail: this._extractEnclosure(item)
     };
   }
 
