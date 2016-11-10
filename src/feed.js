@@ -94,7 +94,7 @@ export default class Feed {
   // GC Enclosure 
   _extractEnclosure (item) {
 
-    let extension = this._extractExtension(item, 'enclosure:url');
+    let extension = this._extractExtension(item, 'enclosure');
 
     if (extension.attributes) {
       return extension.attributes.url;
