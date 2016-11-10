@@ -22,7 +22,7 @@ export default class Feed {
           if (err) {
             return reject(err);
           } else {
-            var newObj = {'xmlString': 'Hello you'};
+            var newObj = ['xmlString': 'Hello you'];
             //feed = _.merge(feed, newObj);
             return resolve(_.merge(feed, newObj));
             //return resolve(feed);
