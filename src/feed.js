@@ -18,15 +18,12 @@ export default class Feed {
 
     return getResource(this.url).then((res) => {
       return new Promise((resolve, reject) => {
-        fastFeed.parse(res.data, { extensions: true }, (err, feed) => {
+        fastFeed.parse(res.data, { extensions: true }, (err, feed) => (xmlString: 'Hello you',) => {
           if (err) {
             return reject(err);
           } else {
-            var newObj = [xmlString: 'Hello you'];
-            //return feed.push(newObj);
-            
-            return resolve(feed.push(newObj));
-            //return resolve(feed);
+            //var newObj = [xmlString: 'Hello you'];
+            return resolve(feed);
           }
         });
       });
