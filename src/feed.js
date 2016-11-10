@@ -51,7 +51,7 @@ export default class Feed {
     
     xmlString: 'Hello you';
     
-    return feed.xmlString;
+    return feed => xmlString;
   }
 
   _formatItem (author, item) {
