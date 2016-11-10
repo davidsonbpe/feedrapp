@@ -75,7 +75,7 @@ export default class Feed {
       publishedDate: item.published || item.pubDate || item.date,
       categories: item.categories || [],
       author: item.author || this._extractCreator(item) || author,
-      thumbnail: this._extractEnclosure(item)
+      thumbnail: this._extractThumbnail(item)
     };
   }
 
