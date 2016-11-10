@@ -50,8 +50,8 @@ export default class Feed {
     feed.entries = feed.entries.slice(0, options.num);
     //xmlString: 'Hello you',
     //return (feed) => xmlString,
-    //return feed => xmlString: 'Hello you';
-    return feed;
+    return feed => xmlString => 'Hello you';
+    //return feed;
   }
 
   _formatItem (author, item) {
