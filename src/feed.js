@@ -24,8 +24,9 @@ export default class Feed {
           } else {
            // var newObj = ['xmlString': 'Hello you'];
             //feed = _.merge(feed, newObj);
-            return resolve(feed.push( { xmlString, "xmlString":"whatever" } );
-            //return resolve(feed);
+            //return resolve(feed.push( { xmlString, "xmlString":"whatever" } );
+            console.log(feed);
+            return resolve(feed);
           }
         });
       });
