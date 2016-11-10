@@ -15,10 +15,10 @@ export default class Feed {
       num: 4,
       output: 'json_xml'
     }, options);
-
+//res.data
     return getResource(this.url).then((res) => {
       return new Promise((resolve, reject) => {
-        fastFeed.parse(res.data, { extensions: true }, (err, feed) => {
+        fastFeed.parse(xml_string, { extensions: true }, (err, feed) => {
           if (err) {
             return reject(err);
           } else {
