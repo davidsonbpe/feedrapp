@@ -15,10 +15,10 @@ export default class Feed {
       num: 4,
       output: 'json_xml'
     }, options);
-//res.data
+
     return getResource(this.url).then((res) => {
       return new Promise((resolve, reject) => {
-        fastFeed.parse(xml_string, { extensions: true }, (err, feed) => {
+        fastFeed.parse(res.data, { extensions: true }, (err, feed) => {
           if (err) {
             return reject(err);
           } else {
@@ -31,8 +31,10 @@ export default class Feed {
         });
       });
     }).then((feed) => {
+      feed.push( { "xmlString":"whatever" };
       return this._format(feed);
     }).then((feed) => {
+      feed.push( { "xmlString":"whatever" };
       return this._applyOptions(feed, options);
     });
   }
