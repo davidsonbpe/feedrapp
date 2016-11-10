@@ -1,5 +1,6 @@
 // 3rd-party modules
 import _ from 'lodash';
+// https://github.com/rla/fast-feed
 import fastFeed from 'fast-feed';
 
 // Local modules
@@ -75,7 +76,12 @@ export default class Feed {
       publishedDate: item.published || item.pubDate || item.date,
       categories: item.categories || [],
       author: item.author || this._extractCreator(item) || author,
-      thumbnail: this._extractThumbnail(item)
+      thumbnail: this._extractThumbnail(item),
+      enclosure: [{
+            url: item,
+            type: item,
+            length: item
+        }],
     };
   }
 
