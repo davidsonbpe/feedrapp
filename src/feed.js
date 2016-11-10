@@ -49,9 +49,9 @@ export default class Feed {
   _applyOptions (feed, options) {
     feed.entries = feed.entries.slice(0, options.num);
     
-    xmlString = 'Hello you';
+    xmlString: 'Hello you';
     
-    return feed  => xmlString;
+    return feed.xmlString;
   }
 
   _formatItem (author, item) {
