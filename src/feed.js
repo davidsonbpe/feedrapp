@@ -22,7 +22,10 @@ export default class Feed {
           if (err) {
             return reject(err);
           } else {
-            return resolve(feed);
+            var newObj = [xmlString: 'Hello you'];
+            return feed.push(newObj);
+            
+            //return resolve(feed);
           }
         });
       });
@@ -50,11 +53,10 @@ export default class Feed {
     feed.entries = feed.entries.slice(0, options.num);
     //xmlString: 'Hello you',
     //return (feed) => xmlString,
+    //var newObj = [xmlString: 'Hello you'];
+    //return feed.push(newObj);
     
-    var newObj = [xmlString: 'Hello you'];
-    return feed.push(newObj);
-    
-    //return feed;
+    return feed;
   }
 
   _formatItem (author, item) {
