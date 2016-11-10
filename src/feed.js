@@ -25,16 +25,14 @@ export default class Feed {
            // var newObj = ['xmlString': 'Hello you'];
             //feed = _.merge(feed, newObj);
             //return resolve(feed.push( { xmlString, "xmlString":"whatever" } );
-            console.log(feed);
+            feed.push( { "xmlString":"whatever" } );
             return resolve(feed);
           }
         });
       });
     }).then((feed) => {
-      feed.push( { "xmlString":"whatever" } );
       return this._format(feed);
     }).then((feed) => {
-      feed.push( { "xmlString":"whatever" } );
       return this._applyOptions(feed, options);
     });
   }
