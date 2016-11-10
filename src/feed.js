@@ -30,7 +30,7 @@ export default class Feed {
           }
         });
       });
-    }).then((feed => { xmlString, "xmlString":"whatever" }) => {
+    }).then((feed) => {
       return this._format(feed);
     }).then((feed) => {
       return this._applyOptions(feed, options);
