@@ -29,7 +29,7 @@ http://localhost:8080/?q=http://blog.depold.com/rss/
 ## Response format
 
 The responses will follow the Google RSS API format which is documented here:
-https://developers.google.com/feed/v1/reference?hl=de#resultJson
+https://developers.google.com/feed/v1/reference#resultJson
 
 ## Run your own feedrapp
 
