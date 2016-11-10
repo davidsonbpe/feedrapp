@@ -78,9 +78,9 @@ export default class Feed {
       author: item.author || this._extractCreator(item) || author,
       thumbnail: this._extractThumbnail(item),
       enclosure: [{
-            url: item.enclosure,
-            length: item.enclosure,
-            type: item.enclosure
+            url: enclosure,
+            length: enclosure,
+            type: enclosure
         }]
     };
   }
