@@ -50,8 +50,9 @@ export default class Feed {
     feed.entries = feed.entries.slice(0, options.num);
     //xmlString: 'Hello you',
     //return (feed) => xmlString,
-    var newObj = [xmlString: 'Hello you'];
-    return feed[newObj];
+    
+    var newObj = {xmlString: 'Hello you'};
+    return feed.push(newObj);
     
     //return feed;
   }
