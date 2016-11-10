@@ -23,8 +23,9 @@ export default class Feed {
             return reject(err);
           } else {
             var newObj = [xmlString: 'Hello you'];
-            return feed.push(newObj);
+            //return feed.push(newObj);
             
+            return resolve(feed.push(newObj));
             //return resolve(feed);
           }
         });
