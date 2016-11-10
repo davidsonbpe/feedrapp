@@ -36,7 +36,7 @@ export default class Feed {
     let author = data.author || '';
 
     return {
-      xmlString: feed,
+      xmlString: 'Hello you',
       feedUrl: this.url,
       title: data.title,
       link: data.link,
@@ -58,7 +58,7 @@ export default class Feed {
     content = content.replace(/\u2028/g, '').replace(/\u2029/g, '');
 
     return {
-      xmlString: feed,
+      xmlString: 'Hello you',
       title: item.title,
       link: item.link,
       content: content,
