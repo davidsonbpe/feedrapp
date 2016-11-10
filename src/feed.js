@@ -51,7 +51,7 @@ export default class Feed {
     //xmlString: 'Hello you',
     //return (feed) => xmlString,
     
-    var newObj = {xmlString: 'Hello you'};
+    var newObj = [xmlString: 'Hello you'];
     return feed.push(newObj);
     
     //return feed;
