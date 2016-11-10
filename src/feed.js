@@ -94,7 +94,7 @@ export default class Feed {
   // GC Enclosure 
   _extractEnclosure (item) {
 
-    return enclosure.url;
+    return item.enclosure.url;
 
   }
 
