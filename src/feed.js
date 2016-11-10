@@ -75,7 +75,7 @@ export default class Feed {
       publishedDate: item.published || item.pubDate || item.date,
       categories: item.categories || [],
       author: item.author || this._extractCreator(item) || author,
-      thumbnail: item.enclosure.url
+      thumbnail: this._extractEnclosure(item)
     };
   }
 
@@ -94,7 +94,13 @@ export default class Feed {
   // GC Enclosure 
   _extractEnclosure (item) {
 
-    return item.enclosure.url;
+    let extension = this._extractExtension(item, 'enclosure:url');
+
+    if (extension.attributes) {
+      return extension.attributes.url;
+    }
+    
+    //return item.enclosure.url;
 
   }
 
