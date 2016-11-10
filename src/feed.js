@@ -12,7 +12,8 @@ export default class Feed {
 
   read (options) {
     options = _.extend({
-      num: 4
+      num: 4,
+      output: 'json_xml'
     }, options);
 
     return getResource(this.url).then((res) => {
@@ -36,7 +37,6 @@ export default class Feed {
     let author = data.author || '';
 
     return {
-      xmlString: 'Hello you',
       feedUrl: this.url,
       title: data.title,
       link: data.link,
@@ -51,6 +51,12 @@ export default class Feed {
 
     return feed;
   }
+  
+  _applyOptions (feed, options) {
+    //feed.entries = feed.entries.slice(0, options.num);
+    xmlString: 'Hello you';
+    return xmlString.feed;
+  }
 
   _formatItem (author, item) {
     let content = item.content || item.summary || item.description || '';
@@ -58,7 +64,6 @@ export default class Feed {
     content = content.replace(/\u2028/g, '').replace(/\u2029/g, '');
 
     return {
-      xmlString: 'Hello you',
       title: item.title,
       link: item.link,
       content: content,
