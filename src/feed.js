@@ -18,7 +18,7 @@ export default class Feed {
 
     return getResource(this.url).then((res) => {
       return new Promise((resolve, reject) => {
-        fastFeed.parse(res.data, { extensions: true }, (err, feed) => (xmlString: 'Hello you',) => {
+        fastFeed.parse(res.data, { extensions: true }, (err, feed) => {
           if (err) {
             return reject(err);
           } else {
