@@ -61,6 +61,11 @@ export default class Feed {
     let content = item.content || item.summary || item.description || '';
 
     content = content.replace(/\u2028/g, '').replace(/\u2029/g, '');
+    
+    MediaEnclosure = this._extractThumbnail(item);
+    if (!MediaEnclosuere){
+      MediaEnclosure = this._extractEnclosure(item);
+    }
 
     return {
       title: item.title,
@@ -70,7 +75,7 @@ export default class Feed {
       publishedDate: item.published || item.pubDate || item.date,
       categories: item.categories || [],
       author: item.author || this._extractCreator(item) || author,
-      thumbnail: this._extractThumbnail(item)
+      thumbnail: MediaEnclosure
     };
   }
 
@@ -80,6 +85,15 @@ export default class Feed {
 
   _extractThumbnail (item) {
     let extension = this._extractExtension(item, 'media:thumbnail');
+
+    if (extension.attributes) {
+      return extension.attributes.url;
+    }
+  }
+  
+  // GC Enclosure 
+  _extractEnclosure (item) {
+    let extension = this._extractExtension(item, 'enclosure');
 
     if (extension.attributes) {
       return extension.attributes.url;
