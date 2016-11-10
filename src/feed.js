@@ -62,9 +62,9 @@ export default class Feed {
 
     content = content.replace(/\u2028/g, '').replace(/\u2029/g, '');
     
-    MediaEnclosure = this._extractThumbnail(item);
+    let MediaEnclosure = this._extractThumbnail(item);
     if (!MediaEnclosuere){
-      MediaEnclosure = this._extractEnclosure(item);
+      let MediaEnclosure = this._extractEnclosure(item);
     }
 
     return {
@@ -93,11 +93,9 @@ export default class Feed {
   
   // GC Enclosure 
   _extractEnclosure (item) {
-    let extension = this._extractExtension(item, 'enclosure');
 
-    if (extension.attributes) {
-      return extension.attributes.url;
-    }
+    return this.enclosure.url;
+
   }
 
   _extractExtension (item, extensionName) {
