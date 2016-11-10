@@ -38,7 +38,7 @@ export default class Feed {
     let author = data.author || '';
 
     return {
-      data: feed,
+      data: res.data,
       feedUrl: this.url,
       title: data.title,
       link: data.link,
